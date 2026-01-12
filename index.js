@@ -1,30 +1,12 @@
-const cityInput = document.querySelector(".cityNameInput");
-const subButton = document.querySelector(".subButton");
-const card = document.querySelector(".weatherFacts");
-const apikey = "7c181d301bb175a7141df2e70bb68567";
+const ApiKey = "7c181d301bb175a7141df2e70bb68567";
 
+const city = "London";
 
-subButton.addEventListener("click", event => {
-    event.preventDefault();
-
-    const city = cityInput.value;
-
-    if(city){
-        
-    }
-    else{
-        displayError("Enter a city");
-    }
-});
-
-async function FetchApi(){
+async function FetchWeather(city){
+const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`;
+const response = await fetch(apiURL);
+console.log(response.json());
 
 }
 
-function displayError(msg){
-const ErrorMsg = document.createElement("p");
-ErrorMsg.textContent = msg;
-
-card.textContent = "";
-card.appendChild(ErrorMsg);
-}
+FetchWeather(city);
