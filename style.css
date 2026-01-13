@@ -69,6 +69,8 @@ hr{
     align-items: center;
     background-color: hsl(212, 36%, 56%);
     border:solid 3px hsl(212, 29%, 46%);
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .temps{
