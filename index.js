@@ -2,7 +2,7 @@ const cityInput = document.querySelector(".city-input");
 const checkBtn = document.querySelector(".weather-check");
 const weatherForm = document.querySelector(".interact");
 const infoCard = document.createElement("div");
-const ApiKey = "7c181d301bb175a7141df2e70bb68567";
+const apiKey = process.env.API_KEY;
 infoCard.classList.add("info-card");
 document.body.appendChild(infoCard);
 weatherForm.addEventListener("submit", async event => {
@@ -24,7 +24,7 @@ weatherForm.addEventListener("submit", async event => {
 })
 
 async function GetWeather(city) {
-    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`;
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     const response = await fetch(apiURL);
 
     if (!response.ok) {
@@ -43,7 +43,7 @@ function DisplayWeather(data) {
     const AllTemps = document.createElement("div");
     const temps = document.createElement("div");
     const tempsMAXMIN = document.createElement("div");
-    
+
 
     //Resets all text to empty incase the user clicks submit again
     infoCard.textContent = "";
@@ -79,7 +79,7 @@ function DisplayWeather(data) {
     AllTemps.classList.add("all-temps");
     temps.classList.add("temps");
     tempsMAXMIN.classList.add("temps-max-min");
-    
+
 
     cityDisplay.classList.add("city-name");
     temperature.classList.add("temperature");
@@ -93,7 +93,7 @@ function DisplayWeather(data) {
     weatherEmoji.classList.add("weather-emoji");
 
     //Card Appends
-    
+
 
     infoCard.appendChild(cityDisplay);
     infoCard.appendChild(AllTemps);
@@ -102,11 +102,11 @@ function DisplayWeather(data) {
     infoCard.insertBefore(headr2, weatherEmoji);
     infoCard.insertBefore(humid, headr2);
     infoCard.appendChild(desc);
-    
+
     //Alltemp Appends
     AllTemps.appendChild(temps);
     AllTemps.appendChild(tempsMAXMIN);
-    
+
     //Alltemp Children Appends
     temps.appendChild(temperature);
     temps.appendChild(feelslike);
