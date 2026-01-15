@@ -1,131 +1,134 @@
-body{
-    margin:0;
+body {
+    margin: 0;
     background-color: hsl(211, 72%, 80%);
 }
 
-.Interact{
+.interact {
     display: flex;
     justify-content: center;
     margin-top: 25px;
 }
 
-.cityInput{
+.city-input {
     font-size: 2.5em;
-    font-weight:bold;
+    font-weight: bold;
     border: solid 5px hsl(211, 31%, 60%);
-    border-radius:7px;
+    border-radius: 7px;
     padding: 10px 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.417);
 }
 
-.weatherCheck{
+.weather-check {
     font-size: 1.5em;
     margin-left: 15px;
     background-color: hsl(120, 37%, 54%);
-    color:white;
+    color: white;
     font-weight: bold;
     border: solid 3px hsl(120, 31%, 40%);
     border-radius: 7px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.417);
-    cursor:pointer;
+    cursor: pointer;
     transition: background-color 0.25s;
 }
 
-.weatherCheck:hover{
-    background-color: hsl(120, 31%, 47%);;
+.weather-check:hover {
+    background-color: hsl(120, 31%, 47%);
+    ;
 }
 
-.infoCard{
-    display:none;
+.info-card {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: hsl(211, 31%, 60%);
-    margin:auto;
+    margin: auto;
     max-width: 350px;
     margin-top: 50px;
-    border:solid 4px hsl(211, 22%, 42%);
+    border: solid 4px hsl(211, 22%, 42%);
     border-radius: 7px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.417);
 }
 
-.cityName{
+.city-name {
     font-size: 3em;
-    color:white;
-    margin-top:20px;
+    color: white;
+    margin-top: 20px;
     margin-bottom: 0px;
 }
 
-hr{
+hr {
     background-color: hsl(211, 22%, 42%);
     width: 250px;
     margin-bottom: 10px;
 }
 
-.AllTemps{
-    display:none;
+.all-temps {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: hsl(212, 36%, 56%);
-    border:solid 3px hsl(212, 29%, 46%);
+    border: solid 3px hsl(212, 29%, 46%);
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.temps{
-    display:flex;
-    margin-top:0px;
+.temps {
+    display: flex;
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 
-.temperature{
+.temperature {
     font-size: 1.6em;
-    color:white;
-    margin-bottom: 0px;
-}
-.feelslike{
-    font-size: 1.6em;
-    color:white;
-    margin-left:20px;
+    color: white;
     margin-bottom: 0px;
 }
 
-.tempsMAXMIN{
-    display:flex;
-     margin-top:0px;
+.feels-like {
+    font-size: 1.6em;
+    color: white;
+    margin-left: 20px;
     margin-bottom: 0px;
 }
 
-.minTemp{
-    font-size: 1.6em;
-    color:white;
-}
-.maxTemp{
-    font-size: 1.6em;
-    color:white;
-    margin-left:20px;
+.temps-max-min {
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.humidity{
+.min-temp {
+    font-size: 1.6em;
+    color: white;
+}
+
+.max-temp {
+    font-size: 1.6em;
+    color: white;
+    margin-left: 20px;
+}
+
+.humidity {
     font-size: 2em;
-    color:white;
-    margin-bottom:10px;
+    color: white;
+    margin-bottom: 10px;
 }
 
-.weatherEmoji{
+.weather-emoji {
     font-size: 5em;
-    margin:0px;
+    margin: 0px;
 }
 
-.weatherDescription{
+.weather-description {
     font-size: 3em;
-    color:white;
+    color: white;
     margin-bottom: 0px;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-.weatherError{
-        font-size: 3em;
-    color:rgb(255, 255, 255);
+.weather-error {
+    font-size: 3em;
+    color: rgb(255, 255, 255);
 }
