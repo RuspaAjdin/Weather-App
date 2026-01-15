@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const cityInput = document.querySelector(".city-input");
 const checkBtn = document.querySelector(".weather-check");
 const weatherForm = document.querySelector(".interact");
