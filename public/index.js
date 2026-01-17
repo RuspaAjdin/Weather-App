@@ -1,10 +1,8 @@
-require('dotenv').config();
-
 const cityInput = document.querySelector(".city-input");
 const checkBtn = document.querySelector(".weather-check");
 const weatherForm = document.querySelector(".interact");
 const infoCard = document.createElement("div");
-const apiKey = process.env.API_KEY;
+
 infoCard.classList.add("info-card");
 document.body.appendChild(infoCard);
 weatherForm.addEventListener("submit", async event => {
@@ -26,17 +24,19 @@ weatherForm.addEventListener("submit", async event => {
 })
 
 async function GetWeather(city) {
-    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-    const response = await fetch(apiURL);
-
-    if (!response.ok) {
-        throw new Error("Could not fetch api data");
-    }
+    const response = await fetch(`/weather?city=${city}`);
 
     return response.json();
 }
 
 function DisplayWeather(data) {
+
+    if (data.error) {
+        displayError(data.error);
+        console.error(data.error);
+        return;
+    }
+
     const { name: city,
         main: { temp, humidity, feels_like, temp_min, temp_max },
         weather: [{ id, description }]
@@ -69,10 +69,10 @@ function DisplayWeather(data) {
 
     //Changing Text
     cityDisplay.textContent = city;
-    temperature.textContent = `Temperature: ${(temp - 273.15).toFixed(1)}°`;
-    feelslike.textContent = `Feels like: ${(feels_like - 273.15).toFixed(1)}°`;
-    minTemp.textContent = `Minimum: ${(temp_min - 273.15).toFixed(1)}°`;
-    maxTemp.textContent = `Maximum: ${(temp_max - 273.15).toFixed(1)}°`;
+    temperature.textContent = `Temperature: ${(temp).toFixed(1)}°`;
+    feelslike.textContent = `Feels like: ${(feels_like).toFixed(1)}°`;
+    minTemp.textContent = `Minimum: ${(temp_min).toFixed(1)}°`;
+    maxTemp.textContent = `Maximum: ${(temp_max).toFixed(1)}°`;
     humid.textContent = `Humidity: ${humidity}%`;
     desc.textContent = `${description}`;
     weatherEmoji.textContent = DisplayEmoji(id);
